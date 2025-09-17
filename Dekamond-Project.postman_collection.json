@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "0e21f482-e7fb-41fd-944d-830a82c52553",
+		"name": "Dekamond-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37626461"
+	},
+	"item": [
+		{
+			"name": "Request OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+15551234568\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/request-otp",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"request-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+15551234568\",\r\n    \"code\": \"883198\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/verify-otp",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTgyMzE4NDQsImlhdCI6MTc1ODE0NTQ0NCwicGhvbmUiOiIrMTU1NTEyMzQ1NjgiLCJzdWIiOiI1MTRmODE1Yi1iNWVkLTQxMTUtYmQ5MC05NzZlYWYyZmY0NTEifQ.k0A8ff666OJqaVlqgIUPC45M0MCOIjhZhOAxiAfTl34"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/api/users/514f815b-b5ed-4115-bd90-976eaf2ff451",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"514f815b-b5ed-4115-bd90-976eaf2ff451"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTgyMzIzMzMsImlhdCI6MTc1ODE0NTkzMywicGhvbmUiOiIrMTU1NTEyMzQ1NjgiLCJzdWIiOiI1MTRmODE1Yi1iNWVkLTQxMTUtYmQ5MC05NzZlYWYyZmY0NTEifQ.XNnuDl-7VEvFSchqhnUgLaI9EDFYTk5A-yLK1RI21_Q"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/users?phone=%2B15551234568&page=1&limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "%2B15551234568"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
