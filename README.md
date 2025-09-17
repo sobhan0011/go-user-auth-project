@@ -45,7 +45,7 @@ internal/
 ## Quick Start
 
 ### Prerequisites
-- Go 1.21+
+- Go 1.23
 - Docker & Docker Compose
 
 ### Run with Docker
